@@ -51,10 +51,11 @@ abstract class MainClass
 
         $name = $this->checkName($name,self::GET_METHODS);
         if (!$name) {
-            return ['error' => 'This method is missing'];
+            return $this->preparationOfAnswers(['error' => 'This method is missing']);
         }
 
-        return $this->dataPacker->assistant($this->type, $name, $id);
+        $result = $this->dataPacker->assistant($this->type, $name, $id);
+        return $this->preparationOfAnswers($result);
     }
 
     protected function addDataToApi($name, $fields)
@@ -63,12 +64,12 @@ abstract class MainClass
 
         $name = $this->checkName($name,self::ADD_METHODS);
         if (!$name) {
-            return ['error' => 'This method is missing'];
+            return $this->preparationOfAnswers(['error' => 'This method is missing']);
         }
 
         $result = $this->dataPacker->assistant($this->type, $name, $fields);
 
-        return $result;
+        return $this->preparationOfAnswers($result);
     }
 
     protected function searchDataInApi($name, $field)
@@ -77,12 +78,12 @@ abstract class MainClass
 
         $name = $this->checkName($name,self::SEARCH_METHOD);
         if (!$name) {
-            return ['error' => 'This method is missing'];
+            return $this->preparationOfAnswers(['error' => 'This method is missing']);
         }
 
         $result = $this->dataPacker->assistant($this->type, $name, $field);
 
-        return $result;
+        return $this->preparationOfAnswers($result);
     }
 
     /**
@@ -95,5 +96,10 @@ abstract class MainClass
         }
 
         return array_search(mb_strtolower($name), $check);
+    }
+
+    private function preparationOfAnswers($in)
+    {
+        return json_encode($in);
     }
 }

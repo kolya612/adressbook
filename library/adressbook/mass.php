@@ -2,8 +2,8 @@
 $mass = [
     'users' => [
         1 => [
-            'name' => 'Никита',
-            'surname' => 'Луговой',
+            'name' => 'Nikita',
+            'surname' => 'Viering',
             'emails' => ['nikita@gmail.com','nikita@realmail.com'],
             'groups' => [
                 1 => 'Relatives',
@@ -13,8 +13,8 @@ $mass = [
             'addresses' => ['str.Ahsarova 18 fl:121'],
         ],
         2 => [
-            'name' => 'Анатолий',
-            'surname' => 'Пертовчан',
+            'name' => 'Toliy',
+            'surname' => 'Wagner',
             'emails' => ['anatol@gmail.com'],
             'groups' => [
                 2 => 'Colleagues',
