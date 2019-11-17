@@ -47,3 +47,4 @@ Issues in this release:
 - it is necessary to validate the input data as the second parameter in the methods addData;
 - will probably need to accept json instead of arrays or create a set of forms for the front;
 - need to decide where to store data. It can be a database or an API call. Now it library used the array for test. Class DataPacker will require significant changes.
+- need to modify autoload
